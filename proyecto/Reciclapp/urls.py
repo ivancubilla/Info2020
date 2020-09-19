@@ -14,7 +14,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from aplicacion.appReciclapp.views import publicacionCrear,publicacionList
+from aplicacion.principal.views import publicacionCrear,publicacionList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
