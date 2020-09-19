@@ -13,4 +13,5 @@ class publicacionCrear(CreateView):
 
 class publicacionList(ListView):
 	model = Publicacion
+	queryset = Publicacion.objects.filter(ciudad = '002')
 	template_name = 'index.html'
