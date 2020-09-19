@@ -14,13 +14,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from reciclapp import views
+from aplicacion.appReciclapp.views import publicacionCrear,publicacionList
 
 urlpatterns = [
-    path('admin', admin.site.urls),
-    path('', views.index, name="index"),
-    path('Resistencia', views.Resistencia, name="Resistencia"),
-    path('Barranqueras', views.Barranqueras, name="Barranqueras"),
-    path('SaenzPena', views.SaenzPena, name="SaenzPena"),
-    path('Publicar', views.Publicar, name="Publicar"),
+    path('admin/', admin.site.urls),
+    path('',publicacionList.as_view(),name = 'index'),
+    path('crear_publicacion/', publicacionCrear.as_view(), name ='crear_publicacion')
 ]

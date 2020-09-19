@@ -1,14 +1,21 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-
-<!-- Mensaje -->
-</br>
-<a class="imagen"> 
-  <div align="center">
-    <img src="https://blogsigre.es/wp-content/uploads/2015/02/reciclado.png" alt="reciclado"/> </a>
-  </div>  
-
-
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inicio</title>
+</head>
+<body>
+  <nav>
+    <a href="{% url 'crear_publicacion' %}">Crear</a>
+  </nav>
+  <div>
+    {% for Publicacion in object_list %}
+      <a href="#">
+        <h1>{{ Publicacion.get_tipo_display }}</h1>
+        <p>{{ Publicacion.peso_aprox }} {{ Publicacion.get_unidad_display }}</p>
+        <p>{{ Publicacion.ciudad }}</p>
+        <p>{{ Publicacion.telefono }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</body>
+</html>
