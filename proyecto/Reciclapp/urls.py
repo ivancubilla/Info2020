@@ -12,12 +12,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# from django.contrib import admin
+# from django.urls import path
+# from aplicacion.principal.views import publicacionCrear,publicacionList
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('',publicacionList.as_view(),name = 'index'),
+#     path('crear_publicacion/', publicacionCrear.as_view(), name ='crear_publicacion')
+# ]
 from django.contrib import admin
 from django.urls import path
-from aplicacion.principal.views import publicacionCrear,publicacionList
+from aplicacion.principal.views import crearPublicacion,inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',publicacionList.as_view(),name = 'index'),
-    path('crear_publicacion/', publicacionCrear.as_view(), name ='crear_publicacion')
+    path('',inicio,name = 'index'),
+    path('crear_publicacion/', crearPublicacion, name ='crear_publicacion')
 ]

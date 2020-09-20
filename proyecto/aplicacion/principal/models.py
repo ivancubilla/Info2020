@@ -11,6 +11,7 @@ class Ciudad(models.Model):
 		return txt.format(self.nombre)
 
 class Publicacion(models.Model):
+	imagen = models.ImageField()
 	codigo = models.AutoField(primary_key = True)
 	fecha_post = models.DateTimeField()
 	fecha_fin = models.DateField()
