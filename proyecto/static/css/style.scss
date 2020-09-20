@@ -1,0 +1,110 @@
+html {
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+body {
+    color: black;;
+}
+
+label {
+    font-size: 2rem;
+}
+
+select {
+    font-size: 2rem;
+}
+input {
+    font-size: 2rem;
+}
+h1 {
+    font-size: 2.5rem;
+}
+p {
+    font-size: 2rem;
+}
+
+.main {
+
+}
+
+.navegacion {
+    background: rgb(0, 1, 44);
+    color: white;
+   
+    .nav {
+        width: 95%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0rem;
+
+        label {
+            margin: 0rem 1rem;
+        }
+
+        input {
+            width: 12rem;
+        }
+
+        button{
+            background: red;
+            border-width: 0;
+            padding: .5rem;
+            font-size: 2rem;
+            color: white;
+            border-radius: .5rem;
+            margin-left: 1rem;
+        }
+
+        a{
+            background: red;
+            border-radius: .5rem;
+            font-size: 2rem;
+            color: white;
+            padding: .5rem;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
+    
+}
+
+.contenedor {
+    background: radial-gradient(rgb(100, 253, 100),green);
+    
+    .publicaciones {
+        min-height: 95vh;
+        width: 95%;
+        margin: auto;
+        display: flex;
+        padding-top: 2rem;
+
+        .publicacion {
+            height: 30rem;
+            width: 20rem;
+            margin: 2rem;
+            display: inline-block;
+            background: white;
+            text-align: center;
+
+            h1{
+                padding: 1rem 0rem;
+                background: gray;
+            }
+            img{
+                width: 100%;
+                height: 50%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+

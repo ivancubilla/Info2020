@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Ciudad,Publicacion
 from .forms import PublicacionForm, PublicacionFilter
 from django.views.generic import CreateView,ListView
@@ -23,7 +23,7 @@ def crearPublicacion(request):
 			'form':form
 		}
 	else:
-		form = PublicacionForm(request.POST)
+		form = PublicacionForm(request.POST, request.FILES)
 		contexto = {
 			'form':form
 		}
@@ -34,7 +34,7 @@ def crearPublicacion(request):
 	return render(request, 'crear_publicacion.html', contexto)
 
 def inicio(request):
-	publicaciones = Publicacion.objects.all()
+	publicaciones = Publicacion.objects.all().order_by('-fecha_post')
 	filtro = PublicacionFilter(request.GET, queryset = publicaciones)
 	contexto = {
 		'filtro':filtro,
