@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inicio</title>
+  <link rel="shortcut icon" href="/static/Img/head.ico" />
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <section class="main">
+    <div class="navegacion">
+      <nav class="nav">
+        <form method="get">
+          {{ filtro.form }}
+          <button type="submit">Buscar</button>
+        </form>
+        
+        <a href="{% url 'crear_publicacion' %}">Crear</a>
+      </nav>
+    </div>
+    <div class="contenedor">
+        <section class="publicaciones">
+          {% for Publicacion in filtro.qs %}
+          <div class="publicacion">
+            <img class="img-responsive watch-right" alt ="Not Found" src="{{ Publicacion.imagen.url }}"/>
+            <h1>{{ Publicacion.get_tipo_display }}</h1>
+            <p>{{ Publicacion.peso_aprox }} {{ Publicacion.get_unidad_display }}</p>
+            <p>{{ Publicacion.ciudad }}</p>
+            <p>{{ Publicacion.telefono }}</p>
+          </div>
+          {% endfor %}
+        <section>
+      
+    </div>
+  </section>
+</body>
+</html>
