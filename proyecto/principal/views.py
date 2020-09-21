@@ -40,3 +40,11 @@ def inicio(request):
 		'filtro':filtro,
 		} 
 	return render(request, 'index.html',contexto)
+
+def verPublicacion(request,id):
+	try:
+		p = Publicacion.objects.get(id = id)
+	except Publicacion.DoesNotExist:
+		raise Http404('No existe esa Publicacion')
+	return render(request, 'publicaciones.html',{ 'p':p })
+
