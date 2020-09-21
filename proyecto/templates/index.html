@@ -22,11 +22,7 @@
         <section class="publicaciones">
           {% for Publicacion in filtro.qs %}
           <div class="publicacion">
-            {% if Publicacion.imagen %}
-              <img class="img-responsive watch-right" alt ="Not Found" src="{{ Publicacion.imagen.url }}"/>
-            {% else %}
-              <img class="img-responsive watch-right" src="{% url '/static/img/publicaciones/default.png' %}"/>
-            {% endif %}
+            <img class="img-responsive watch-right" alt ="Not Found" src="{{ Publicacion.imagen.url }}"/>
             <h1>{{ Publicacion.get_tipo_display }}</h1>
             <p>{{ Publicacion.peso_aprox }} {{ Publicacion.get_unidad_display }}</p>
             <p>{{ Publicacion.ciudad }}</p>
