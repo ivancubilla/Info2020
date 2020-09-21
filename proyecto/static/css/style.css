@@ -89,16 +89,13 @@ p {
   min-height: 95vh;
   width: 95%;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding-top: 2rem;
 }
 
 .contenedor .publicaciones .publicacion {
   height: 30rem;
   width: 20rem;
-  margin: 2rem;
+  margin: 2rem 1.9rem;
   display: inline-block;
   background: white;
   text-align: center;
