@@ -26,7 +26,7 @@ from django.conf.urls.static import static
 
 from django.contrib import admin
 from django.urls import path
-from aplicacion.principal.views import crearPublicacion,inicio
+from principal.views import crearPublicacion,inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
