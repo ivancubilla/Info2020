@@ -3,6 +3,7 @@ from .models import Ciudad,Publicacion
 from .forms import PublicacionForm, PublicacionFilter
 from django.views.generic import CreateView,ListView
 from django.urls import reverse_lazy
+from datetime import date
 # Create your views here.
 
 # class publicacionCrear(CreateView):
@@ -34,7 +35,8 @@ def crearPublicacion(request):
 	return render(request, 'crear_publicacion.html', contexto)
 
 def inicio(request):
-	publicaciones = Publicacion.objects.all().order_by('-fecha_post')
+	hoy = date.today()
+	publicaciones = Publicacion.objects.filter(fecha_fin__gte=hoy).order_by('-fecha_post')
 	filtro = PublicacionFilter(request.GET, queryset = publicaciones)
 	contexto = {
 		'filtro':filtro,
