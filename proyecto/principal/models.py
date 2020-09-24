@@ -13,7 +13,7 @@ class Ciudad(models.Model):
 class Publicacion(models.Model):
 	imagen = models.ImageField(blank = True, null = True,default='/default.png')
 	id = models.AutoField(primary_key = True)
-	fecha_post = models.DateTimeField()
+	fecha_post = models.DateTimeField(auto_now = True)
 	fecha_fin = models.DateField()
 	desecho = [
 			('0',''),
@@ -39,3 +39,7 @@ class Publicacion(models.Model):
 	nombre = models.CharField(max_length = 50)
 	apellido = models.CharField(max_length = 50)
 	telefono = models.IntegerField()
+
+	def __str__(self):
+		txt = '{0} : desde {1} hasta {2}'
+		return txt.format(self.tipo, self.fecha_post , self.fecha_fin)

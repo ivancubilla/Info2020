@@ -35,8 +35,12 @@ def crearPublicacion(request):
 	return render(request, 'crear_publicacion.html', contexto)
 
 def inicio(request):
-	hoy = date.today()
-	publicaciones = Publicacion.objects.filter(fecha_fin__gte=hoy).order_by('-fecha_post')
+	"""  Oculta pero la instancia sigue en la base de datos  """
+#	hoy = date.today()
+#	publicaciones = Publicacion.objects.filter(fecha_fin__gte=hoy).order_by('-fecha_post')
+	"""  Se borra la instancia de la base de datos  """
+	actualizar = Publicacion.objects.filter(fecha_fin__lt = date.today()).delete()
+	publicaciones = Publicacion.objects.all().order_by('-fecha_post')
 	filtro = PublicacionFilter(request.GET, queryset = publicaciones)
 	contexto = {
 		'filtro':filtro,
