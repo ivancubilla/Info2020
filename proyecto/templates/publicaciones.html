@@ -17,7 +17,7 @@
                 <p>Ciudad: {{ p.ciudad }}</p>
                 <p>Nombre: {{ p.nombre }} {{ p.apellido }}</p>
                 <p>Tel: {{ p.telefono }}</p>
-                <p>Disponible Hasta: {{ p.fecha_fin }}</p>
+                <p>Disponible Hasta el {{ p.fecha_fin.day }} del {{ p.fecha_fin.month }} de {{ p.fecha_fin.year }}</p>
                 <a href="https://api.whatsapp.com/send?phone={{ p.telefono }}&text=Hola,%20me%20interesa%20tu%20publicacion" target="_blank">whatsapp</a>
             </div>
         </div>
