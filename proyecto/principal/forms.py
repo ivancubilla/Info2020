@@ -6,7 +6,6 @@ class DateInput(forms.DateInput):
 	input_type = 'date'
 
 class PublicacionForm(forms.ModelForm):
-	fecha_fin = forms.DateField(label='Disponible Hasta')
 	peso_aprox = forms.IntegerField(label='Peso Aproximado')
 	class Meta:
 		model = Publicacion
