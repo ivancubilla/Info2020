@@ -18,6 +18,7 @@
                 <p>Nombre: {{ p.nombre }} {{ p.apellido }}</p>
                 <p>Tel: {{ p.telefono }}</p>
                 <p>Disponible Hasta: {{ p.fecha_fin }}</p>
+                <a href="https://api.whatsapp.com/send?phone={{ p.telefono }}&text=Hola,%20me%20interesa%20tu%20publicacion" target="_blank">whatsapp</a>
             </div>
         </div>
     </div>
