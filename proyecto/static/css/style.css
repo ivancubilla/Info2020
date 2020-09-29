@@ -34,7 +34,9 @@ p {
 }
 
 .navegacion {
-  background: #17241d;
+  background: #52c234;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #061700, #52c234);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #061700, #52c234); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
 
@@ -62,7 +64,8 @@ p {
 }
 
 .navegacion .nav button {
-  background: rgb(105, 233, 148);
+  background: rgb(27, 70, 41);
+  border-style: groove;
   border-width: 0;
   padding: .5rem;
   font-size: 2rem;
@@ -72,7 +75,7 @@ p {
 }
 
 .navegacion .nav a {
-  background:rgb(105, 233, 148);
+  background:rgb(31, 66, 43);
   border-radius: .5rem;
   font-size: 2rem;
   color: white;
@@ -82,6 +85,9 @@ p {
 }
 
 .contenedor {
+  background: #56ab2f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, rgba(168, 224, 99, 0.596), rgba(86, 171, 47, 0.575));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgba(168, 224, 99, 0.555), rgba(86, 171, 47, 0.623)),url(/static/img/logo4.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin:0;
   min-height: 100;
   background-image: url(/static/img/logo1.jpg);
@@ -108,8 +114,14 @@ p {
   width: 20rem;
   margin: 2rem 1.9rem;
   display: inline-block;
-  background: white;
+  background: #A1FFCE;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+;
   text-align: center;
+  -webkit-box-shadow: 10px 0px 45px -5px rgba(0,0,0,0.8);
+  -moz-box-shadow: 10px 0px 45px -5px rgba(0,0,0,0.8);
+  box-shadow: 10px 0px 45px -5px rgba(0,0,0,0.8);
 }
 
 .contenedor .publicaciones a .publicacion h1 {
