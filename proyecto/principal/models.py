@@ -12,8 +12,8 @@ class Ciudad(models.Model):
 
 class Publicacion(models.Model):
 	imagen = models.ImageField(blank = True, null = True,default='/default.png')
-	codigo = models.AutoField(primary_key = True)
-	fecha_post = models.DateTimeField()
+	id = models.AutoField(primary_key = True)
+	fecha_post = models.DateTimeField(auto_now = True)
 	fecha_fin = models.DateField()
 	desecho = [
 			('0',''),

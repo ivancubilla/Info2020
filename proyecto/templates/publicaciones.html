@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block titulo %}Publicacion{% endblock titulo %}
+{% block nav %}
+    <div class="navegacion">
+        <nav class="nav">
+            <a href="{% url 'index' %}">Atras</a>
+        </nav>
+    </div>
+{% endblock nav %}
+{% block contenedor %}
+    <div class="contenedor">
+        <div class="publicaciones">
+            <div class="elementos">
+                <img class="img-responsive watch-right" alt="" src="{{ p.imagen.url }}">
+                <h1>{{ p.get_tipo_display }}</h1>
+                <p>Cantidad: {{ p.peso_aprox }} {{ p.get_unidad_display }}</p>
+                <p>Ciudad: {{ p.ciudad }}</p>
+                <p>Nombre: {{ p.nombre }} {{ p.apellido }}</p>
+                <p>Tel: {{ p.telefono }}</p>
+                <p>Disponible Hasta: {{ p.fecha_fin }}</p>
+                <a type="button"  class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone={{ p.telefono }}&text=Hola,%20me%20interesa%20tu%20publicacion" target="_blank" role="button">Whatsapp</a>
+            </div>
+        </div>
+    </div>
+{% endblock contenedor %}

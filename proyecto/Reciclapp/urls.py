@@ -26,12 +26,13 @@ from django.conf.urls.static import static
 
 from django.contrib import admin
 from django.urls import path
-from aplicacion.principal.views import crearPublicacion,inicio
+from principal.views import crearPublicacion,inicio, verPublicacion
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',inicio,name = 'index'),
-    path('crear_publicacion/', crearPublicacion, name ='crear_publicacion')
+    path('crear_publicacion/', crearPublicacion, name ='crear_publicacion'),
+    path('publicaciones/<int:id>/', verPublicacion, name='publicaciones'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

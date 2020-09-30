@@ -1,0 +1,18 @@
+body{
+    background-image: url(/static/img/tierra.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(152, 231, 194);
+    
+}
+#letras{
+    display: inline-block;
+    width: 80px;
+    font-weight: 800;
+    padding : 2em;
+    margin  : 0;
+    color: #000;
+
+
+    text-shadow: -2px -2px 0px #fff, 2px -2px 0px #fff, -2px 2px 0px #fff, 2px 2px 0px #fff;
+}

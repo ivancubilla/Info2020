@@ -3,6 +3,8 @@ from .models import Ciudad,Publicacion
 from .forms import PublicacionForm, PublicacionFilter
 from django.views.generic import CreateView,ListView
 from django.urls import reverse_lazy
+from datetime import date
+
 # Create your views here.
 
 # class publicacionCrear(CreateView):
@@ -34,9 +36,25 @@ def crearPublicacion(request):
 	return render(request, 'crear_publicacion.html', contexto)
 
 def inicio(request):
+	#hoy=date.today()
+	#publicaciones = Publicacion.objects.filter(fecha_fin__gte=hoy).order_by('-fecha_post')
+	#publicaciones = Publicacion.objects.all().order_by('-fecha_post')
+	"""  Oculta pero la instancia sigue en la base de datos  """
+#	hoy = date.today()
+#	publicaciones = Publicacion.objects.filter(fecha_fin__gte=hoy).order_by('-fecha_post')
+	"""  Se borra la instancia de la base de datos  """
+	actualizar = Publicacion.objects.filter(fecha_fin__lt = date.today()).delete()
 	publicaciones = Publicacion.objects.all().order_by('-fecha_post')
 	filtro = PublicacionFilter(request.GET, queryset = publicaciones)
 	contexto = {
 		'filtro':filtro,
 		} 
 	return render(request, 'index.html',contexto)
+
+def verPublicacion(request,id):
+	try:
+		p = Publicacion.objects.get(id = id)
+	except Publicacion.DoesNotExist:
+		raise Http404('No existe esa Publicacion')
+	return render(request, 'publicaciones.html',{ 'p':p })
+

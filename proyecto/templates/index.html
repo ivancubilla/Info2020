@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Inicio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>{% block titulo %}Inicio{% endblock titulo %}</title>
   <link rel="shortcut icon" href="/static/Img/head.ico" />
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
   <section class="main">
+    {% block nav %}
     <div class="navegacion">
       <nav class="nav">
         <form method="get">
@@ -18,9 +20,12 @@
         <a href="{% url 'crear_publicacion' %}">Crear</a>
       </nav>
     </div>
+    {% endblock nav %}
+    {% block contenedor %}
     <div class="contenedor">
-        <section class="publicaciones">
-          {% for Publicacion in filtro.qs %}
+      <section class="publicaciones">
+        {% for Publicacion in filtro.qs %}
+        <a href="{% url 'publicaciones' Publicacion.id %}">
           <div class="publicacion">
             <img class="img-responsive watch-right" alt ="Not Found" src="{{ Publicacion.imagen.url }}"/>
             <h1>{{ Publicacion.get_tipo_display }}</h1>
@@ -28,10 +33,19 @@
             <p>{{ Publicacion.ciudad }}</p>
             <p>{{ Publicacion.telefono }}</p>
           </div>
-          {% endfor %}
-        <section>
-      
+        </a>
+        {% endfor %}
+      <section>
     </div>
+    {% endblock contenedor %}
   </section>
-</body>
+  <footer class="page-footer btn-lg btn btn-dark btn-block p-3">
+
+    <!-- Footer Elements -->
+    <div class="container">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href=""> Info2020 </a>
+    </div>
+  
+  </footer>
 </html>
